@@ -1,9 +1,10 @@
-function calc(operation, a, b) {
+function calc(a, b, operation) {
   // "+" = sum, "-" = sub, "*" = multi, "/" = div, "**" = exp, "%" = rem
   if (
-    !(a >= 0 || a <= 0 || b >= 0 || b <= 0) ||
-    (Boolean(a) == 0 && a !== 0) ||
-    (Boolean(b) == 0 && b !== 0) ||
+    typeof a != "number" ||
+    typeof b != "number" ||
+    a !== a ||
+    b !== b ||
     operation == null
   ) {
     return "Error";
@@ -41,4 +42,4 @@ function calc(operation, a, b) {
   return result;
 }
 
-console.log(calc("div", 1, 0));
+console.log(calc(1, 0, "div"));
